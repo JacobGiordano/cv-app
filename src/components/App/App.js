@@ -1,11 +1,25 @@
-import "../../components/App/App.css"
+import React, { Component } from "react";
+import "../../components/App/App.css";
+import Header from "../Header/Header";
+import Inputs from "../Inputs/Inputs";
+import Preview from "../Preview/Preview";
 
-function App() {
-  return (
-    <div className="App">
+class App extends Component {
+  constructor(props){
+    super(props)
 
-    </div>
-  );
+    this.state ={
+
+    }
+  }
+  render() {
+    return (
+    <>
+      <Header></Header>
+      <Inputs></Inputs>
+      <Preview></Preview>
+    </>)
+  }
 }
 
 export default App;
