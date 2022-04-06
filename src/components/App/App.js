@@ -10,36 +10,7 @@ class App extends Component {
     super(props)
 
     this.state ={
-      first_name: "",
-      last_name: "",
-      phone: "",
-      email: "",
-      location: "",
-      city: "",
-      state_province: "",
-      sites: [
-        {
-          id: uniqid(),
-          site: ""
-        }
-      ],
       profile: "",
-      work_experience: [
-        {
-          id: uniqid(),
-          company: "",
-          role_position: "",
-          location: "",
-          start_date: "",
-          end_date: "",
-          responsibilities: [
-            {
-              id: uniqid(),
-              responsibility: ""
-            }
-          ]
-        }
-      ],
       project: [
         {
           id: uniqid(),
@@ -82,11 +53,12 @@ class App extends Component {
   }
   render() {
     return (
-    <>
-      <Header></Header>
-      <Inputs></Inputs>
-      <Preview></Preview>
-    </>)
+      <>
+        <Header></Header>
+        <Inputs></Inputs>
+        <Preview></Preview>
+      </>
+    )
   }
 }
 
