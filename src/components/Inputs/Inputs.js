@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import "../Inputs/Inputs.css"
+import Contact from "../Contact/Contact";
+import Profile from "../Profile/Profile";
+import WorkExperience from "../WorkExperience/WorkExperience";
 
 class Inputs extends Component {
   constructor(props) {
@@ -10,7 +12,14 @@ class Inputs extends Component {
     }
   }
   render() {
-    return <div>Inputs</div>
+    return (
+      <div className="inputs">
+        <div>Inputs</div>
+        <Profile></Profile>
+        <Contact></Contact>
+        <WorkExperience></WorkExperience>
+      </div>
+    )
   }
 }
 
