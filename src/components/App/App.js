@@ -10,45 +10,7 @@ class App extends Component {
     super(props)
 
     this.state ={
-      profile: "",
-      project: [
-        {
-          id: uniqid(),
-          project: "",
-          role_position: "",
-          location: "",
-          start_date: "",
-          end_date: "",
-          responsibilities: [
-            {
-              id: uniqid(),
-              responsibility: ""
-            }
-          ]
-        }
-      ],
-      skills: [
-        {
-          id: uniqid(),
-          skill: ""
-        }
-      ],
-      education: [
-        {
-          id: uniqid(),
-          degree_certificate: "",
-          area_of_study: "",
-          school_institution: "",
-          start_date: "",
-          end_date: ""
-        }
-      ],
-      certificates_associations: [
-        {
-          id: uniqid(),
-          certificate_association: ""
-        }
-      ]
+
     }
   }
   render() {
