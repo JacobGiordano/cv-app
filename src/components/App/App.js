@@ -3,7 +3,6 @@ import "../../components/App/App.css";
 import Header from "../Header/Header";
 import Inputs from "../Inputs/Inputs";
 import Preview from "../Preview/Preview";
-import uniqid from "uniqid";
 
 class App extends Component {
   constructor(props){
