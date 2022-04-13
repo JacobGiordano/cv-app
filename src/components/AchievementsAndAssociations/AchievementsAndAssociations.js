@@ -33,8 +33,6 @@ class achievementsAssociations extends Component {
       )
     })
     return (
-      this.state.achievementss_associations &&
-      this.state.achievementss_associations[0].achievements_association &&
       <>
         <h3>Achievements and Associations</h3>
         {achievementsAssociationsArray}
