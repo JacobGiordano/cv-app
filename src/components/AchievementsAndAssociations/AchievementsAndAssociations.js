@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import uniqid from "uniqid";
 
-class achievementsAssociations extends Component {
+class AchievementsAssociations extends Component {
   constructor(props) {
     super(props)
 
@@ -41,4 +41,4 @@ class achievementsAssociations extends Component {
   }
 }
 
-export default achievementsAssociations;
+export default AchievementsAssociations;
