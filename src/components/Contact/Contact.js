@@ -1,56 +1,28 @@
 import React, { Component } from 'react';
-import uniqid from "uniqid";
 
 class Contact extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      first_name: "",
-      last_name: "",
-      phone: "",
-      email: "",
-      location: "",
-      city: "",
-      state_province: "",
-      websites: [
-        {
-          id: uniqid(),
-          site: ""
-        }
-      ],
+
     }
   }
- 
-  handleChange = (e) => {
-    this.setState({[e.target.name]: e.target.value});
-  }
-  handleAddWebsite = () => {
-    this.setState({websites: [...this.state.websites, {
-      id: uniqid(),
-      site: ""
-    }]});
-  }
-  handleChangeWebsite = (e) => {
-    const indexNum = parseInt(e.target.id.split("_")[1]);
-    const newWebsitesArray = this.state.websites.map((site, i) => {
-      return i === indexNum ? { id: site.id, site: e.target.value } : site
-    });
-    this.setState({websites: newWebsitesArray});
-  }
   render() {
+    const stateKey = "contact";
+    const {appState, handleChange, handleAddArrayObj, handleChangeArrayObj} = this.props;
     let websitesArray = [];
-    this.state.websites.map((website, i) => {
+    appState.contact.websites.map((website, i) => {
       let labelText = `Website #${i + 1}`;
       return websitesArray.push(
         <div key={i}>
           <label
-            htmlFor={`website_${i}`}
+            htmlFor={`site_${i}`}
           >{labelText}</label>
           <input
             type="text"
-            id={`website_${i}`}
-            onChange={e => this.handleChangeWebsite(e)}
+            id={`site_${i}`}
+            onChange={e => handleChangeArrayObj(e, "contact", "websites", "site")}
             value={website.site}
           />
         </div>
@@ -64,15 +36,15 @@ class Contact extends Component {
           <input 
             type="text" id={`first_name`}
             name="first_name"
-            value={this.state.first_name}
-            onChange={e => this.handleChange(e)}
+            value={appState.contact.first_name}
+            onChange={e => handleChange(e, stateKey)}
           />
           <label htmlFor={`last_name`}>Last Name</label>
           <input 
             type="text" id={`last_name`}
             name="last_name"
-            value={this.state.last_name}
-            onChange={e => this.handleChange(e)}
+            value={appState.contact.last_name}
+            onChange={e => handleChange(e, stateKey)}
           />
         </div>
         <div>
@@ -80,15 +52,15 @@ class Contact extends Component {
           <input 
             type="tel" id={`phone`}
             name="phone"
-            value={this.state.phone}
-            onChange={e => this.handleChange(e)}
+            value={appState.contact.phone}
+            onChange={e => handleChange(e, stateKey)}
           />
           <label htmlFor={`email`}>Email</label>
           <input 
             type="email" id={`email`}
             name="email"
-            value={this.state.email}
-            onChange={e => this.handleChange(e)}
+            value={appState.contact.email}
+            onChange={e => handleChange(e, stateKey)}
           />
         </div>
         <div>
@@ -96,22 +68,22 @@ class Contact extends Component {
           <input 
             type="text" id={`city`}
             name="city"
-            value={this.state.city}
-            onChange={e => this.handleChange(e)}
+            value={appState.contact.city}
+            onChange={e => handleChange(e, stateKey)}
           />
           <label htmlFor={`state_province`}>State / Province</label>
           <input 
             type="text" id={`state_province`}
             name="state_province"
-            value={this.state.state_province}
-            onChange={e => this.handleChange(e)}
+            value={appState.contact.state_province}
+            onChange={e => handleChange(e, stateKey)}
           />
         </div>
         <div>
           {websitesArray}
         </div>
         <button
-          onClick={() => this.handleAddWebsite()}
+          onClick={() => handleAddArrayObj("contact", "websites", "site")}
         >
           + Add website
         </button>
@@ -120,4 +92,4 @@ class Contact extends Component {
   }
 }
 
-export default Contact
+export default Contact;

@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import "../../components/App/App.css";
 import Header from "../Header/Header";
-import Inputs from "../Inputs/Inputs";
-import Preview from "../Preview/Preview";
+import Main from "../Main/Main";
 
 class App extends Component {
   constructor(props){
     super(props)
 
-    this.state ={
+    this.state = {
 
     }
   }
@@ -16,8 +15,7 @@ class App extends Component {
     return (
       <>
         <Header></Header>
-        <Inputs></Inputs>
-        <Preview></Preview>
+        <Main></Main>
       </>
     )
   }

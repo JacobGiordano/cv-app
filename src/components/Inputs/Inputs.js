@@ -16,10 +16,16 @@ class Inputs extends Component {
     }
   }
   render() {
+    const {appState, handleChange, handleAddArrayObj, handleChangeArrayObj} = this.props;
     return (
       <div className="inputs">
         <div>Inputs</div>
-        <Contact></Contact>
+        <Contact
+          appState={appState}
+          handleChange={handleChange}
+          handleAddArrayObj={handleAddArrayObj}
+          handleChangeArrayObj={handleChangeArrayObj}
+        ></Contact>
         <Profile></Profile>
         <WorkExperience></WorkExperience>
         <Projects></Projects>
