@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import "../Preview/Preview.css";
+import ContactPreview from "./ContactPreview/ContactPreview";
 
 class Preview extends Component {
   constructor(props) {
@@ -10,9 +11,13 @@ class Preview extends Component {
     }
   }
   render() {
+    const {appState} = this.props;
     return (
       <div className="preview">
         <div>Preview</div>
+        <ContactPreview 
+          appState={appState}
+        ></ContactPreview>
       </div>
     );
   }
