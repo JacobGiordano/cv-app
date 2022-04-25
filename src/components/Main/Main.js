@@ -67,7 +67,9 @@ class Main extends Component {
           handleAddArrayObj={this.handleAddArrayObj}
           handleChangeArrayObj={this.handleChangeArrayObj}
         ></Inputs>
-        <Preview></Preview>
+        <Preview
+          appState={this.state}
+        ></Preview>
       </>
     );
   }
