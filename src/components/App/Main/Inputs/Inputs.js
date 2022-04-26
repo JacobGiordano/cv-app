@@ -27,12 +27,34 @@ class Inputs extends Component {
           handleAddArrayObj={handleAddArrayObj}
           handleChangeArrayObj={handleChangeArrayObj}
         ></Contact>
-        <Profile></Profile>
-        <WorkExperience></WorkExperience>
-        <Projects></Projects>
-        <Skills></Skills>
-        <Education></Education>
-        <AchievementsAndAssociations></AchievementsAndAssociations>
+        <Profile
+          appState={appState}
+          handleChange={handleChange}></Profile>
+        <WorkExperience
+          appState={appState}
+          handleChange={handleChange}
+          handleAddArrayObj={handleAddArrayObj}
+          handleChangeArrayObj={handleChangeArrayObj}></WorkExperience>
+        <Projects
+          appState={appState}
+          handleChange={handleChange}
+          handleAddArrayObj={handleAddArrayObj}
+          handleChangeArrayObj={handleChangeArrayObj}></Projects>
+        <Skills
+          appState={appState}
+          handleChange={handleChange}
+          handleAddArrayObj={handleAddArrayObj}
+          handleChangeArrayObj={handleChangeArrayObj}></Skills>
+        <Education
+          appState={appState}
+          handleChange={handleChange}
+          handleAddArrayObj={handleAddArrayObj}
+          handleChangeArrayObj={handleChangeArrayObj}></Education>
+        <AchievementsAndAssociations
+          appState={appState}
+          handleChange={handleChange}
+          handleAddArrayObj={handleAddArrayObj}
+          handleChangeArrayObj={handleChangeArrayObj}></AchievementsAndAssociations>
       </div>
     )
   }
