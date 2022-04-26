@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import "../Preview/Preview.css";
+import "./Preview.css";
 import ContactPreview from "./ContactPreview/ContactPreview";
 
 class Preview extends Component {

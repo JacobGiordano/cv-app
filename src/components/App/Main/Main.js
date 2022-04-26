@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Inputs from "../Inputs/Inputs";
-import Preview from "../Preview/Preview";
+import "./Main.css"
+import Inputs from "./Inputs/Inputs";
+import Preview from "./Preview/Preview";
 import uniqid from "uniqid";
 
 class Main extends Component {
@@ -60,17 +61,19 @@ class Main extends Component {
   }
   render() {
     return (
-      <>
+      <div className="main">
         <Inputs
+          className="inputs"
           appState={this.state}
           handleChange={this.handleChange}
           handleAddArrayObj={this.handleAddArrayObj}
           handleChangeArrayObj={this.handleChangeArrayObj}
         ></Inputs>
         <Preview
+          className="preview"
           appState={this.state}
         ></Preview>
-      </>
+      </div>
     );
   }
 }

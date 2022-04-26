@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./Inputs.css"
 import AchievementsAndAssociations from "./AchievementsAndAssociations/AchievementsAndAssociations";
 import Contact from "./Contact/Contact";
 import Education from "./Education/Education";
