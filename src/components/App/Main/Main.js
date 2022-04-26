@@ -24,6 +24,9 @@ class Main extends Component {
           }
         ],
       },
+      profile: {
+        profile: ""
+      }
     }
   }
   handleChange = (e, stateKey) => {
