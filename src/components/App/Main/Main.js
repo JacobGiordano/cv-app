@@ -56,7 +56,7 @@ class Main extends Component {
     this.setState(prevState => ({
       [stateKey]: {
         ...prevState[stateKey],
-        websites: prevState[stateKey][stateArrayKey].map((obj, i) => {
+        [stateArrayKey]: prevState[stateKey][stateArrayKey].map((obj, i) => {
           return i === indexNum ? { id: obj.id, [statePropKey]: e.target.value } : obj;
         })
       }
