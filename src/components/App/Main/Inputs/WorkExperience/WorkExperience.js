@@ -6,34 +6,27 @@ class WorkExperience extends Component {
     super(props)
 
     this.state = {
-      id: uniqid(),
-      company: "",
-      role_position: "",
-      location: "",
-      start_date: "",
-      end_date: "",
-      responsibilities: [
-        {
-          id: uniqid(),
-          responsibility: ""
-        }
-      ]
+
     }
   }
   render() {
-    const sectionId = uniqid();
+    const stateKey = "work_experience";
+    const arrayKey = "responsibilities";
+    const propertyKey = "responsibility";
+    const {appState, handleChange, handleAddArrayObj, handleChangeArrayObj} = this.props;
     let responsibilitiesArray = [];
-    this.state.responsibilities.map((resp, i) => {
+    appState.work_experience.responsibilities.map((resp, i) => {
       let labelText = `Responsibility #${i + 1}`;
       return responsibilitiesArray.push(
-        <div key={uniqid()}>
+        <div key={i}>
           <label
-            htmlFor={`responsibility_${sectionId}_${i}`}
+            htmlFor={`responsibility_${i}`}
           >{labelText}</label>
           <input
             type="text"
-            id={`responsibility_${sectionId}_${i}`}
-            // value={resp.responsibility}
+            id={`responsibility_${i}`}
+            onChange={e => handleChangeArrayObj(e, stateKey, arrayKey, propertyKey)}
+            value={resp.responsibility}
           />
         </div>
       )
@@ -41,21 +34,56 @@ class WorkExperience extends Component {
     return (
       <>
         <h3>Work Experience</h3>
-        <label htmlFor={`company_name_${sectionId}`}>Company Name</label>
-        <input type="text" id={`company_name_${sectionId}`} />
-        <label htmlFor={`role_position_${sectionId}`}>Role / Position</label>
-        <input type="text" id={`role_position_${sectionId}`} />
-        <label htmlFor={`location_${sectionId}`}>Location</label>
-        <input type="text" id={`location_${sectionId}`} />
+        <label htmlFor={`company`}>Company Name</label>
+        <input
+          type="text"
+          id={`company`}
+          name={`company`}
+          value={appState.work_experience[`company`]}
+          onChange={e => handleChange(e, stateKey)}
+        />
+        <label htmlFor={`role_position`}>Role / Position</label>
+        <input
+          type="text"
+          id={`role_position`}
+          name={`role_position`}
+          value={appState.work_experience[`role_position`]}
+          onChange={e => handleChange(e, stateKey)}
+        />
+        <label htmlFor={`location`}>Location</label>
+        <input
+          type="text"
+          id={`location`}
+          name={`location`}
+          value={appState.work_experience[`location`]}
+          onChange={e => handleChange(e, stateKey)}
+        />
         <div>
-          <label htmlFor={`start_date_${sectionId}`}>Start Date</label>
-          <input type="text" id={`start_date_${sectionId}`} />
-          <label htmlFor={`end_date_${sectionId}`}>End Date</label>
-          <input type="text" id={`end_date_${sectionId}`} />
+          <label htmlFor={`start_date`}>Start Date</label>
+          <input
+            type="text"
+            id={`start_date`}
+            name={`start_date`}
+            value={appState.work_experience[`start_date`]}
+            onChange={e => handleChange(e, stateKey)}
+          />
+          <label htmlFor={`end_date`}>End Date</label>
+          <input
+            type="text"
+            id={`end_date`}
+            name={`end_date`}
+            value={appState.work_experience[`end_date`]}
+            onChange={e => handleChange(e, stateKey)}
+          />
         </div>
         <div>
           {responsibilitiesArray}
         </div>
+        <button
+          onClick={() => handleAddArrayObj(stateKey, arrayKey, propertyKey)}
+        >
+          + Add website
+        </button>
       </>
     )
   }

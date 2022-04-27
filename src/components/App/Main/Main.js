@@ -26,6 +26,20 @@ class Main extends Component {
       },
       profile: {
         profile: ""
+      },
+      work_experience: {
+        id: uniqid(),
+        company: "",
+        role_position: "",
+        location: "",
+        start_date: "",
+        end_date: "",
+        responsibilities: [
+          {
+            id: uniqid(),
+            responsibility: ""
+          }
+        ]
       }
     }
   }
