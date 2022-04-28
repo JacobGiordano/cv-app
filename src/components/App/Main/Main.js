@@ -27,20 +27,22 @@ class Main extends Component {
       profile: {
         profile: ""
       },
-      work_experience: {
-        id: uniqid(),
-        company: "",
-        role_position: "",
-        location: "",
-        start_date: "",
-        end_date: "",
-        responsibilities: [
-          {
-            id: uniqid(),
-            responsibility: ""
-          }
-        ]
-      }
+      work_experience: [
+        {
+          id: uniqid(),
+          company: "",
+          role_position: "",
+          location: "",
+          start_date: "",
+          end_date: "",
+          responsibilities: [
+            {
+              id: uniqid(),
+              responsibility: ""
+            }
+          ]
+        }
+      ]
     }
   }
   handleChange = (e, stateKey) => {
@@ -51,6 +53,11 @@ class Main extends Component {
       }
     }));
   }
+  handleAddObjToStateArray = (stateKey, newObj) => {
+    this.setState(prevState => ({
+      [stateKey]: [...prevState[stateKey], newObj]
+    })
+  )}
   handleAddArrayObj = (stateKey, stateArrayKey, statePropKey) => {
     this.setState(prevState => ({
       [stateKey]: {
@@ -85,6 +92,7 @@ class Main extends Component {
           handleChange={this.handleChange}
           handleAddArrayObj={this.handleAddArrayObj}
           handleChangeArrayObj={this.handleChangeArrayObj}
+          handleAddObjToStateArray={this.handleAddObjToStateArray}
         ></Inputs>
         <Preview
           className="preview"
