@@ -6,7 +6,7 @@ import Education from "./Education/Education";
 import Profile from "./Profile/Profile";
 import Projects from "./Projects/Projects";
 import Skills from "./Skills/Skills";
-import WorkExperience from "./WorkExperience/WorkExperience";
+import WorkExperienceSection from "./WorkExperienceSection/WorkExperienceSection";
 
 class Inputs extends Component {
   constructor(props) {
@@ -17,7 +17,12 @@ class Inputs extends Component {
     }
   }
   render() {
-    const {appState, handleChange, handleAddArrayObj, handleChangeArrayObj} = this.props;
+    const {
+      appState, handleChange,
+      handleAddArrayObj,
+      handleChangeArrayObj,
+      handleAddObjToStateArray
+    } = this.props;
     return (
       <div className="inputs">
         <div>Inputs</div>
@@ -30,11 +35,12 @@ class Inputs extends Component {
         <Profile
           appState={appState}
           handleChange={handleChange}></Profile>
-        <WorkExperience
+        <WorkExperienceSection
           appState={appState}
           handleChange={handleChange}
           handleAddArrayObj={handleAddArrayObj}
-          handleChangeArrayObj={handleChangeArrayObj}></WorkExperience>
+          handleChangeArrayObj={handleChangeArrayObj}
+          handleAddObjToStateArray={handleAddObjToStateArray}></WorkExperienceSection>
         <Projects
           appState={appState}
           handleChange={handleChange}

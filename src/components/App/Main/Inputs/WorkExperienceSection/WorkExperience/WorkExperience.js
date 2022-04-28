@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import uniqid from "uniqid";
 
 class WorkExperience extends Component {
   constructor(props) {
@@ -13,9 +12,9 @@ class WorkExperience extends Component {
     const stateKey = "work_experience";
     const arrayKey = "responsibilities";
     const propertyKey = "responsibility";
-    const {appState, handleChange, handleAddArrayObj, handleChangeArrayObj} = this.props;
+    const {appState, handleChange, handleAddArrayObj, handleChangeArrayObj, workExperienceData} = this.props;
     let responsibilitiesArray = [];
-    appState.work_experience.responsibilities.map((resp, i) => {
+    workExperienceData.responsibilities.map((resp, i) => {
       let labelText = `Responsibility #${i + 1}`;
       return responsibilitiesArray.push(
         <div key={i}>
@@ -33,7 +32,6 @@ class WorkExperience extends Component {
     })
     return (
       <>
-        <h3>Work Experience</h3>
         <label htmlFor={`company`}>Company Name</label>
         <input
           type="text"
