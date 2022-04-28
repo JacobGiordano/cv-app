@@ -12,7 +12,7 @@ class Contact extends Component {
     const stateKey = "contact";
     const arrayKey = "websites";
     const propertyKey = "site";
-    const {appState, handleChange, handleAddArrayObj, handleChangeArrayObj} = this.props;
+    const {appState, handleChange, handleAddObjToObjArray, handleChangeObjInObjArray} = this.props;
     let websitesArray = [];
     appState.contact.websites.map((website, i) => {
       let labelText = `Website #${i + 1}`;
@@ -24,7 +24,7 @@ class Contact extends Component {
           <input
             type="text"
             id={`site_${i}`}
-            onChange={e => handleChangeArrayObj(e, stateKey, arrayKey, propertyKey)}
+            onChange={e => handleChangeObjInObjArray(e, stateKey, arrayKey, propertyKey)}
             value={website.site}
           />
         </div>
@@ -91,7 +91,7 @@ class Contact extends Component {
           {websitesArray}
         </div>
         <button
-          onClick={() => handleAddArrayObj(stateKey, arrayKey, propertyKey)}
+          onClick={() => handleAddObjToObjArray(stateKey, arrayKey, propertyKey)}
         >
           + Add website
         </button>

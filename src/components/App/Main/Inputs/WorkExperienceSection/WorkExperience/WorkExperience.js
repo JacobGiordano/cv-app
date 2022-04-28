@@ -12,7 +12,7 @@ class WorkExperience extends Component {
     const stateKey = "work_experience";
     const arrayKey = "responsibilities";
     const propertyKey = "responsibility";
-    const {appState, handleChange, handleAddArrayObj, handleChangeArrayObj, workExperienceData} = this.props;
+    const {appState, handleChange, handleAddObjToObjArray, handleChangeObjInObjArray, workExperienceData} = this.props;
     let responsibilitiesArray = [];
     workExperienceData.responsibilities.map((resp, i) => {
       let labelText = `Responsibility #${i + 1}`;
@@ -24,7 +24,7 @@ class WorkExperience extends Component {
           <input
             type="text"
             id={`responsibility_${i}`}
-            onChange={e => handleChangeArrayObj(e, stateKey, arrayKey, propertyKey)}
+            onChange={e => handleChangeObjInObjArray(e, stateKey, arrayKey, propertyKey)}
             value={resp.responsibility}
           />
         </div>
@@ -78,7 +78,7 @@ class WorkExperience extends Component {
           {responsibilitiesArray}
         </div>
         <button
-          onClick={() => handleAddArrayObj(stateKey, arrayKey, propertyKey)}
+          onClick={() => handleAddObjToObjArray(stateKey, arrayKey, propertyKey)}
         >
           + Add website
         </button>

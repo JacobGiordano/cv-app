@@ -58,7 +58,7 @@ class Main extends Component {
       [stateKey]: [...prevState[stateKey], newObj]
     })
   )}
-  handleAddArrayObj = (stateKey, stateArrayKey, statePropKey) => {
+  handleAddObjToObjArray = (stateKey, stateArrayKey, statePropKey) => {
     this.setState(prevState => ({
       [stateKey]: {
         ...prevState[stateKey],
@@ -72,7 +72,7 @@ class Main extends Component {
       }
     }));
   }
-  handleChangeArrayObj = (e, stateKey, stateArrayKey, statePropKey) => {
+  handleChangeObjInObjArray = (e, stateKey, stateArrayKey, statePropKey) => {
     const indexNum = parseInt(e.target.id.split("_")[1]);
     this.setState(prevState => ({
       [stateKey]: {
@@ -90,8 +90,8 @@ class Main extends Component {
           className="inputs"
           appState={this.state}
           handleChange={this.handleChange}
-          handleAddArrayObj={this.handleAddArrayObj}
-          handleChangeArrayObj={this.handleChangeArrayObj}
+          handleAddObjToObjArray={this.handleAddObjToObjArray}
+          handleChangeObjInObjArray={this.handleChangeObjInObjArray}
           handleAddObjToStateArray={this.handleAddObjToStateArray}
         ></Inputs>
         <Preview
