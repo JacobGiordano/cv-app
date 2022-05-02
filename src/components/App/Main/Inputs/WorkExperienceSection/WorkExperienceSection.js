@@ -31,6 +31,7 @@ class WorkExperienceSection extends Component {
     appState.work_experience.map((experience, i) => {
       return workExperienceArray.push(<WorkExperience
         key={i}
+        elementKey={i}
         appState={appState}
         handleChange={handleChange}
         handleAddObjToObjArray={handleAddObjToObjArray}
