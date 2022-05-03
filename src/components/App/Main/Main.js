@@ -78,10 +78,10 @@ class Main extends Component {
       [stateKey]: {
         ...prevState[stateKey],
         [stateArrayKey]: prevState[stateKey][stateArrayKey].map((obj, i) => {
-          return i === indexNum ? { id: obj.id, [statePropKey]: e.target.value } : obj;
+          return i === indexNum ? { ...prevState[obj], [statePropKey]: e.target.value } : obj;
         })
       }
-    }))
+    }));
   }
   render() {
     return (
