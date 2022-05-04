@@ -53,7 +53,9 @@ class Main extends Component {
       }
     }));
   }
-  handleAddObjToObjArray = (stateKey, stateArrayKey, statePropKey) => {
+  handleAddObjToObjArray = (e, stateKey, stateArrayKey) => {
+    const splitId = e.target.id.split("_");
+    const statePropKey = splitId.slice(0, splitId.length - 1).join("_");
     this.setState(prevState => ({
       [stateKey]: {
         ...prevState[stateKey],
@@ -67,8 +69,10 @@ class Main extends Component {
       }
     }));
   }
-  handleChangeObjInObjArray = (e, stateKey, stateArrayKey, statePropKey) => {
-    const indexNum = parseInt(e.target.id.split("_")[1]);
+  handleChangeObjInObjArray = (e, stateKey, stateArrayKey) => {
+    const splitId = e.target.id.split("_");
+    const indexNum = parseInt(splitId[splitId.length - 1]);
+    const statePropKey = splitId.slice(0, splitId.length - 1).join("_");
     this.setState(prevState => ({
       [stateKey]: {
         ...prevState[stateKey],

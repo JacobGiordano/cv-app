@@ -79,7 +79,7 @@ class WorkExperience extends Component {
           {responsibilitiesArray}
         </div>
         <button
-          onClick={() => handleAddObjToObjArray(stateKey, arrayKey, propertyKey)}
+          onClick={(e) => handleAddObjToObjArray(stateKey, arrayKey)}
         >
           + Add website
         </button>

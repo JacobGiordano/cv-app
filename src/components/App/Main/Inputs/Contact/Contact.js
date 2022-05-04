@@ -24,7 +24,7 @@ class Contact extends Component {
           <input
             type="text"
             id={`site_${i}`}
-            onChange={e => handleChangeObjInObjArray(e, stateKey, arrayKey, propertyKey)}
+            onChange={e => handleChangeObjInObjArray(e, stateKey, arrayKey)}
             value={website.site}
           />
         </div>
@@ -91,7 +91,7 @@ class Contact extends Component {
           {websitesArray}
         </div>
         <button
-          onClick={() => handleAddObjToObjArray(stateKey, arrayKey, propertyKey)}
+          onClick={(e) => handleAddObjToObjArray(e, stateKey, arrayKey)}
         >
           + Add website
         </button>
