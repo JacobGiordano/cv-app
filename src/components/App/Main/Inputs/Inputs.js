@@ -21,7 +21,8 @@ class Inputs extends Component {
       appState, handleChange,
       handleAddObjToObjArray,
       handleChangeObjInObjArray,
-      handleAddObjToStateArray
+      handleAddObjToStateArray,
+      handleUpdateObjInStateArray
     } = this.props;
     return (
       <div className="inputs">
@@ -37,10 +38,9 @@ class Inputs extends Component {
           handleChange={handleChange}></Profile>
         <WorkExperienceSection
           appState={appState}
-          handleChange={handleChange}
           handleAddObjToObjArray={handleAddObjToObjArray}
-          handleChangeObjInObjArray={handleChangeObjInObjArray}
-          handleAddObjToStateArray={handleAddObjToStateArray}></WorkExperienceSection>
+          handleAddObjToStateArray={handleAddObjToStateArray}
+          handleUpdateObjInStateArray={handleUpdateObjInStateArray}></WorkExperienceSection>
         <Projects
           appState={appState}
           handleChange={handleChange}

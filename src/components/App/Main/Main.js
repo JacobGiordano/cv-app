@@ -56,8 +56,20 @@ class Main extends Component {
   handleAddObjToStateArray = (stateKey, newObj) => {
     this.setState(prevState => ({
       [stateKey]: [...prevState[stateKey], newObj]
-    })
-  )}
+    }));
+  }
+  handleUpdateObjInStateArray = (e, stateKey) => {
+    const splitId = e.target.id.split("_");
+    const indexNum = parseInt(splitId[splitId.length - 1]);
+    const statePropKey = splitId.slice(0, splitId.length - 1).join("_");
+    console.log(splitId)
+    console.table(indexNum, statePropKey)
+    this.setState(prevState => ({
+      [stateKey]: prevState[stateKey].map((obj, i) => {
+        return i === indexNum ? { ...prevState[stateKey][i], [statePropKey]: e.target.value } : obj;
+      })
+    }));
+  }
   handleAddObjToObjArray = (stateKey, stateArrayKey, statePropKey) => {
     this.setState(prevState => ({
       [stateKey]: {
@@ -93,6 +105,7 @@ class Main extends Component {
           handleAddObjToObjArray={this.handleAddObjToObjArray}
           handleChangeObjInObjArray={this.handleChangeObjInObjArray}
           handleAddObjToStateArray={this.handleAddObjToStateArray}
+          handleUpdateObjInStateArray={this.handleUpdateObjInStateArray}
         ></Inputs>
         <Preview
           className="preview"
