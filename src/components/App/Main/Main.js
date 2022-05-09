@@ -103,8 +103,7 @@ class Main extends Component {
     const statePropKey = splitId.slice(0, splitId.length - 1).join("_");
     this.setState(prevState => ({
       [stateKey]: prevState[stateKey].map((obj, i) => {
-        if (i === indexNum) {
-          return {
+        return i === indexNum ? {
             ...prevState[stateKey][i],
             [stateArrayKey]: [
               ...prevState[stateKey][i][stateArrayKey],
@@ -113,7 +112,10 @@ class Main extends Component {
                 [statePropKey]: ""
               }
             ]
-          }
+          } : obj
+      })
+    }));
+  }
         } else {
           return obj
         }
