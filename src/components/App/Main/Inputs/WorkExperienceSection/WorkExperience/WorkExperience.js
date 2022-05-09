@@ -12,25 +12,24 @@ class WorkExperience extends Component {
     const stateKey = "work_experience";
     const arrayKey = "responsibilities";
     const propertyKey = "responsibility";
-    const {elementKey, appState, handleAddObjToObjArray, workExperienceData, handleUpdateObjInStateArray} = this.props;
+    const {elementKey, appState, handleAddObjToObjArray, handleAddObjToNestedArray, workExperienceData, handleUpdateObjInStateArray} = this.props;
     let responsibilitiesArray = [];
-    console.log(workExperienceData)
-    // workExperienceData.responsibilities.map((resp, i) => {
-    //   let labelText = `Responsibility #${i + 1}`;
-    //   return responsibilitiesArray.push(
-    //     <div key={i}>
-    //       <label
-    //         htmlFor={`responsibility_${i}`}
-    //       >{labelText}</label>
-    //       <input
-    //         type="text"
-    //         id={`responsibility_${i}`}
-    //         onChange={e => handleUpdateObjInStateArray(e, stateKey, arrayKey, propertyKey)}
-    //         value={resp.responsibility}
-    //       />
-    //     </div>
-    //   )
-    // })
+    workExperienceData.responsibilities.map((resp, i) => {
+      let labelText = `Responsibility #${i + 1}`;
+      return responsibilitiesArray.push(
+        <div key={i}>
+          <label
+            htmlFor={`responsibility_${i}`}
+          >{labelText}</label>
+          <input
+            type="text"
+            id={`responsibility_${i}`}
+            onChange={e => handleUpdateObjInStateArray(e, stateKey, arrayKey, propertyKey)}
+            value={resp.responsibility}
+          />
+        </div>
+      )
+    })
     return (
       <div className="card" id={`work_experience_${elementKey}`}>
         <label htmlFor={`company`}>Company Name</label>
@@ -79,7 +78,7 @@ class WorkExperience extends Component {
           {responsibilitiesArray}
         </div>
         <button
-          onClick={(e) => handleAddObjToObjArray(stateKey, arrayKey)}
+          onClick={(e) => handleAddObjToNestedArray(e, stateKey, arrayKey)}
         >
           + Add website
         </button>

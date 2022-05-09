@@ -12,7 +12,7 @@ class WorkExperienceSection extends Component {
   }
   render() {
     const stateKey = "work_experience";
-    const {appState, handleAddObjToObjArray, handleAddObjToStateArray, handleUpdateObjInStateArray} = this.props;
+    const {appState, handleAddObjToObjArray, handleAddObjToNestedArray, handleAddObjToStateArray, handleUpdateObjInStateArray} = this.props;
     const newObj = {
       id: uniqid(),
       company: "",
@@ -34,6 +34,7 @@ class WorkExperienceSection extends Component {
         elementKey={i}
         appState={appState}
         handleAddObjToObjArray={handleAddObjToObjArray}
+        handleAddObjToNestedArray={handleAddObjToNestedArray}
         handleUpdateObjInStateArray={handleUpdateObjInStateArray}
         workExperienceData={experience}
       ></WorkExperience>)

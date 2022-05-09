@@ -91,11 +91,32 @@ class Main extends Component {
     const splitId = e.target.id.split("_");
     const indexNum = parseInt(splitId[splitId.length - 1]);
     const statePropKey = splitId.slice(0, splitId.length - 1).join("_");
-    console.log(splitId)
-    console.table(indexNum, statePropKey)
     this.setState(prevState => ({
       [stateKey]: prevState[stateKey].map((obj, i) => {
         return i === indexNum ? { ...prevState[stateKey][i], [statePropKey]: e.target.value } : obj;
+      })
+    }));
+  }
+  handleAddObjToNestedArray = (e, stateKey, stateArrayKey) => {
+    const splitId = e.target.closest(".card").id.split("_");
+    const indexNum = parseInt(splitId[splitId.length - 1]);
+    const statePropKey = splitId.slice(0, splitId.length - 1).join("_");
+    this.setState(prevState => ({
+      [stateKey]: prevState[stateKey].map((obj, i) => {
+        if (i === indexNum) {
+          return {
+            ...prevState[stateKey][i],
+            [stateArrayKey]: [
+              ...prevState[stateKey][i][stateArrayKey],
+              {
+                id: uniqid(),
+                [statePropKey]: ""
+              }
+            ]
+          }
+        } else {
+          return obj
+        }
       })
     }));
   }
