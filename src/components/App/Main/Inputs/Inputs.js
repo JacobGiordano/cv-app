@@ -18,10 +18,12 @@ class Inputs extends Component {
   }
   render() {
     const {
-      appState, handleChange,
+      appState,
+      handleChange,
       handleAddObjToObjArray,
       handleChangeObjInObjArray,
       handleAddObjToNestedArray,
+      handleChangeArrayObjInStateObjArray,
       handleAddObjToStateArray,
       handleUpdateObjInStateArray
     } = this.props;
@@ -41,6 +43,7 @@ class Inputs extends Component {
           appState={appState}
           handleAddObjToObjArray={handleAddObjToObjArray}
           handleAddObjToNestedArray={handleAddObjToNestedArray}
+          handleChangeArrayObjInStateObjArray={handleChangeArrayObjInStateObjArray}
           handleAddObjToStateArray={handleAddObjToStateArray}
           handleUpdateObjInStateArray={handleUpdateObjInStateArray}></WorkExperienceSection>
         <Projects
