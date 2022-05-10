@@ -97,10 +97,9 @@ class Main extends Component {
       })
     }));
   }
-  handleAddObjToNestedArray = (e, stateKey, stateArrayKey) => {
+  handleAddObjToNestedArray = (e, stateKey, stateArrayKey, statePropKey) => {
     const splitId = e.target.closest(".card").id.split("_");
     const indexNum = parseInt(splitId[splitId.length - 1]);
-    const statePropKey = splitId.slice(0, splitId.length - 1).join("_");
     this.setState(prevState => ({
       [stateKey]: prevState[stateKey].map((obj, i) => {
         return i === indexNum ? {
@@ -109,7 +108,7 @@ class Main extends Component {
               ...prevState[stateKey][i][stateArrayKey],
               {
                 id: uniqid(),
-                [stateArrayKey]: ""
+                [statePropKey]: ""
               }
             ]
           } : obj

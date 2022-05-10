@@ -11,11 +11,10 @@ class WorkExperience extends Component {
   render() {
     const stateKey = "work_experience";
     const arrayKey = "responsibilities";
-    const propertyKey = "responsibility";
+    const statePropKey = "responsibility";
     const {
       elementKey,
       appState,
-      handleAddObjToObjArray,
       handleAddObjToNestedArray,
       handleChangeArrayObjInStateObjArray,
       workExperienceData,
@@ -86,7 +85,7 @@ class WorkExperience extends Component {
           {responsibilitiesArray}
         </div>
         <button
-          onClick={(e) => handleAddObjToNestedArray(e, stateKey, arrayKey)}
+          onClick={(e) => handleAddObjToNestedArray(e, stateKey, arrayKey, statePropKey)}
         >
           + Add website
         </button>
