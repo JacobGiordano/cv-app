@@ -10,7 +10,7 @@ class ContactPreview extends Component {
   }
   render() {
     const {appState} = this.props;
-    const contactWebsites = appState.contact.websites.map((website, i) => <span key={i}>{website.site}</span>);
+    const contactWebsites = appState.contact.websites.map((obj, i) => <span key={i}>{obj.site}</span>);
     return (
       <div className="contact-preview">
         <span>{appState.contact.first_name}</span>
