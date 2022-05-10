@@ -109,7 +109,7 @@ class Main extends Component {
               ...prevState[stateKey][i][stateArrayKey],
               {
                 id: uniqid(),
-                [statePropKey]: ""
+                [stateArrayKey]: ""
               }
             ]
           } : obj
