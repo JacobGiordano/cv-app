@@ -21,6 +21,7 @@ class Inputs extends Component {
       appState,
       handleChange,
       handleAddObjToObjArray,
+      handleRemoveObjFromObjArray,
       handleChangeObjInObjArray,
       handleAddObjToNestedArray,
       handleChangeArrayObjInStateObjArray,
@@ -34,6 +35,7 @@ class Inputs extends Component {
           appState={appState}
           handleChange={handleChange}
           handleAddObjToObjArray={handleAddObjToObjArray}
+          handleRemoveObjFromObjArray={handleRemoveObjFromObjArray}
           handleChangeObjInObjArray={handleChangeObjInObjArray}
         ></Contact>
         <Profile
@@ -41,7 +43,6 @@ class Inputs extends Component {
           handleChange={handleChange}></Profile>
         <WorkExperienceSection
           appState={appState}
-          handleAddObjToObjArray={handleAddObjToObjArray}
           handleAddObjToNestedArray={handleAddObjToNestedArray}
           handleChangeArrayObjInStateObjArray={handleChangeArrayObjInStateObjArray}
           handleAddObjToStateArray={handleAddObjToStateArray}

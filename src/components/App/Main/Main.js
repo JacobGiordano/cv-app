@@ -53,9 +53,7 @@ class Main extends Component {
       }
     }));
   }
-  handleAddObjToObjArray = (e, stateKey, stateArrayKey) => {
-    const splitId = e.target.id.split("_");
-    const statePropKey = splitId.slice(0, splitId.length - 1).join("_");
+  handleAddObjToObjArray = (e, stateKey, stateArrayKey, statePropKey) => {
     this.setState(prevState => ({
       [stateKey]: {
         ...prevState[stateKey],
@@ -69,10 +67,16 @@ class Main extends Component {
       }
     }));
   }
-  handleChangeObjInObjArray = (e, stateKey, stateArrayKey) => {
+  handleRemoveObjFromObjArray = (e, stateKey, stateArrayKey) => {
     const splitId = e.target.id.split("_");
     const indexNum = parseInt(splitId[splitId.length - 1]);
-    const statePropKey = splitId.slice(0, splitId.length - 1).join("_");
+    this.setState(prevState => ({
+      [stateKey]: {
+        ...prevState[stateKey],
+        [stateArrayKey]: prevState[stateKey][stateArrayKey].filter((obj, i) => i !== indexNum ? obj : null)
+      }
+    }));
+  }
   handleChangeObjInObjArray = (e, stateKey, stateArrayKey, statePropKey) => {
     const splitId = e.target.id.split("_");
     const indexNum = parseInt(splitId[splitId.length - 1]);
@@ -145,6 +149,7 @@ class Main extends Component {
           appState={this.state}
           handleChange={this.handleChange}
           handleAddObjToObjArray={this.handleAddObjToObjArray}
+          handleRemoveObjFromObjArray={this.handleRemoveObjFromObjArray}
           handleAddObjToNestedArray={this.handleAddObjToNestedArray}
           handleChangeArrayObjInStateObjArray={this.handleChangeArrayObjInStateObjArray}
           handleChangeObjInObjArray={this.handleChangeObjInObjArray}
