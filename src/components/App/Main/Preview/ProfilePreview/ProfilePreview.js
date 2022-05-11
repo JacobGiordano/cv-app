@@ -12,7 +12,8 @@ class ProfilePreview extends Component {
   render() {
     const {appState} = this.props;
     return (
-      <div className="contact-preview">
+      <div className="profile-preview">
+        <h3>Profile</h3>
         <span>{appState.profile.profile}</span>
       </div>
     );

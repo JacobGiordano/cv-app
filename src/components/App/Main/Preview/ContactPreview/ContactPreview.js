@@ -13,6 +13,7 @@ class ContactPreview extends Component {
     const contactWebsites = appState.contact.websites.map((obj, i) => <span key={i}>{obj.site}</span>);
     return (
       <div className="contact-preview">
+        <h3>Contact</h3>
         <span>{appState.contact.first_name}</span>
         <span>{appState.contact.last_name}</span>
         <span>{appState.contact.phone}</span>
