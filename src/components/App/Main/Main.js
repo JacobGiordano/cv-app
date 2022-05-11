@@ -73,11 +73,14 @@ class Main extends Component {
     const splitId = e.target.id.split("_");
     const indexNum = parseInt(splitId[splitId.length - 1]);
     const statePropKey = splitId.slice(0, splitId.length - 1).join("_");
+  handleChangeObjInObjArray = (e, stateKey, stateArrayKey, statePropKey) => {
+    const splitId = e.target.id.split("_");
+    const indexNum = parseInt(splitId[splitId.length - 1]);
     this.setState(prevState => ({
       [stateKey]: {
         ...prevState[stateKey],
         [stateArrayKey]: prevState[stateKey][stateArrayKey].map((obj, i) => {
-          return i === indexNum ? { ...prevState[obj], [statePropKey]: e.target.value } : obj;
+          return i === indexNum ? { ...obj, [statePropKey]: e.target.value } : obj;
         })
       }
     }));
