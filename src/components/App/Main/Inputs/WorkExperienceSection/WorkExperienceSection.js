@@ -14,7 +14,6 @@ class WorkExperienceSection extends Component {
     const stateKey = "work_experience";
     const {
       appState,
-      handleAddObjToObjArray,
       handleAddObjToNestedArray,
       handleChangeArrayObjInStateObjArray,
       handleAddObjToStateArray,
@@ -40,7 +39,6 @@ class WorkExperienceSection extends Component {
         key={i}
         elementKey={i}
         appState={appState}
-        handleAddObjToObjArray={handleAddObjToObjArray}
         handleAddObjToNestedArray={handleAddObjToNestedArray}
         handleChangeArrayObjInStateObjArray={handleChangeArrayObjInStateObjArray}
         handleUpdateObjInStateArray={handleUpdateObjInStateArray}
