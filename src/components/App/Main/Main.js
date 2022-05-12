@@ -135,7 +135,6 @@ class Main extends Component {
     const splitId = e.target.id.split("_");
     const indexNum = parseInt(splitId[splitId.length - 1]);
     const statePropKey = splitId.slice(0, splitId.length - 1).join("_");
-    console.log(stateKey, stateArrayKey, parentIndex, indexNum, statePropKey)
     this.setState(prevState => ({
       [stateKey]: prevState[stateKey].map((nestedObj, i) => {
         return i === parentIndex ? {
