@@ -14,7 +14,6 @@ class WorkExperience extends Component {
     const statePropKey = "responsibility";
     const {
       elementKey,
-      appState,
       handleAddObjToNestedArray,
       handleChangeArrayObjInStateObjArray,
       workExperienceData,
@@ -39,12 +38,20 @@ class WorkExperience extends Component {
     })
     return (
       <div className="card" id={`work_experience_${elementKey}`}>
+        <div className="card-title">
+          <h4>Work Experience #{elementKey + 1}</h4>
+          <button 
+            id={`remove_card_btn_${elementKey}`}
+            className="remove-card-btn"
+            onClick={e => handleRemoveObjToStateArray(e, stateKey)}
+          >&times;</button>
+        </div>
         <label htmlFor={`company`}>Company Name</label>
         <input
           type="text"
           id={`company_${elementKey}`}
           name={`company_${elementKey}`}
-          value={appState.work_experience[`company_${elementKey}`]}
+          value={workExperienceData.company}
           onChange={e => handleUpdateObjInStateArray(e, stateKey)}
         />
         <label htmlFor={`role_position`}>Role / Position</label>
@@ -52,7 +59,7 @@ class WorkExperience extends Component {
           type="text"
           id={`role_position_${elementKey}`}
           name={`role_position_${elementKey}`}
-          value={appState.work_experience[`role_position_${elementKey}`]}
+          value={workExperienceData.role_position}
           onChange={e => handleUpdateObjInStateArray(e, stateKey)}
         />
         <label htmlFor={`location_${elementKey}`}>Location</label>
@@ -60,7 +67,7 @@ class WorkExperience extends Component {
           type="text"
           id={`location_${elementKey}`}
           name={`location_${elementKey}`}
-          value={appState.work_experience[`location_${elementKey}`]}
+          value={workExperienceData.location}
           onChange={e => handleUpdateObjInStateArray(e, stateKey)}
         />
         <div>
@@ -69,7 +76,7 @@ class WorkExperience extends Component {
             type="text"
             id={`start_date_${elementKey}`}
             name={`start_date_${elementKey}`}
-            value={appState.work_experience[`start_date_${elementKey}`]}
+            value={workExperienceData.start_date}
             onChange={e => handleUpdateObjInStateArray(e, stateKey)}
           />
           <label htmlFor={`end_date`}>End Date</label>
@@ -77,7 +84,7 @@ class WorkExperience extends Component {
             type="text"
             id={`end_date_${elementKey}`}
             name={`end_date_${elementKey}`}
-            value={appState.work_experience[`end_date_${elementKey}`]}
+            value={workExperienceData.end_date}
             onChange={e => handleUpdateObjInStateArray(e, stateKey)}
           />
         </div>

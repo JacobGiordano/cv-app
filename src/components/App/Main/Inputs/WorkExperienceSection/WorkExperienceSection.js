@@ -38,7 +38,6 @@ class WorkExperienceSection extends Component {
       return workExperienceArray.push(<WorkExperience
         key={i}
         elementKey={i}
-        appState={appState}
         handleAddObjToNestedArray={handleAddObjToNestedArray}
         handleChangeArrayObjInStateObjArray={handleChangeArrayObjInStateObjArray}
         handleUpdateObjInStateArray={handleUpdateObjInStateArray}
