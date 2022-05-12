@@ -17,6 +17,7 @@ class WorkExperienceSection extends Component {
       handleAddObjToNestedArray,
       handleChangeArrayObjInStateObjArray,
       handleAddObjToStateArray,
+      handleRemoveObjFromStateArray,
       handleUpdateObjInStateArray
     } = this.props;
     const newObj = {
@@ -39,6 +40,7 @@ class WorkExperienceSection extends Component {
         key={i}
         elementKey={i}
         handleAddObjToNestedArray={handleAddObjToNestedArray}
+        handleRemoveObjFromStateArray={handleRemoveObjFromStateArray}
         handleChangeArrayObjInStateObjArray={handleChangeArrayObjInStateObjArray}
         handleUpdateObjInStateArray={handleUpdateObjInStateArray}
         workExperienceData={experience}

@@ -26,6 +26,7 @@ class Inputs extends Component {
       handleAddObjToNestedArray,
       handleChangeArrayObjInStateObjArray,
       handleAddObjToStateArray,
+      handleRemoveObjFromStateArray,
       handleUpdateObjInStateArray
     } = this.props;
     return (
@@ -46,6 +47,7 @@ class Inputs extends Component {
           handleAddObjToNestedArray={handleAddObjToNestedArray}
           handleChangeArrayObjInStateObjArray={handleChangeArrayObjInStateObjArray}
           handleAddObjToStateArray={handleAddObjToStateArray}
+          handleRemoveObjFromStateArray={handleRemoveObjFromStateArray}
           handleUpdateObjInStateArray={handleUpdateObjInStateArray}></WorkExperienceSection>
         <Projects
           appState={appState}

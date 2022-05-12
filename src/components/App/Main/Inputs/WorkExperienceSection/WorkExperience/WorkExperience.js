@@ -17,6 +17,7 @@ class WorkExperience extends Component {
       handleAddObjToNestedArray,
       handleChangeArrayObjInStateObjArray,
       workExperienceData,
+      handleRemoveObjFromStateArray,
       handleUpdateObjInStateArray
     } = this.props;
     let responsibilitiesArray = [];
@@ -43,7 +44,7 @@ class WorkExperience extends Component {
           <button 
             id={`remove_card_btn_${elementKey}`}
             className="remove-card-btn"
-            onClick={e => handleRemoveObjToStateArray(e, stateKey)}
+            onClick={e => handleRemoveObjFromStateArray(e, stateKey)}
           >&times;</button>
         </div>
         <label htmlFor={`company`}>Company Name</label>

@@ -94,6 +94,13 @@ class Main extends Component {
       [stateKey]: [...prevState[stateKey], newObj]
     }));
   }
+  handleRemoveObjFromStateArray = (e, stateKey) => {
+    const splitId = e.target.id.split("_");
+    const indexNum = parseInt(splitId[splitId.length - 1]);
+    this.setState(prevState => ({
+      [stateKey]: prevState[stateKey].filter((obj, i) => i !== indexNum ? obj : null)
+    }));
+  }
   handleUpdateObjInStateArray = (e, stateKey) => {
     const splitId = e.target.id.split("_");
     const indexNum = parseInt(splitId[splitId.length - 1]);
@@ -154,6 +161,7 @@ class Main extends Component {
           handleChangeArrayObjInStateObjArray={this.handleChangeArrayObjInStateObjArray}
           handleChangeObjInObjArray={this.handleChangeObjInObjArray}
           handleAddObjToStateArray={this.handleAddObjToStateArray}
+          handleRemoveObjFromStateArray={this.handleRemoveObjFromStateArray}
           handleUpdateObjInStateArray={this.handleUpdateObjInStateArray}
         ></Inputs>
         <Preview
