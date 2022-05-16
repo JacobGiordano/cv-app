@@ -100,7 +100,7 @@ class WorkExperience extends Component {
         <button
           onClick={(e) => handleAddObjToNestedArray(e, stateKey, arrayKey, statePropKey)}
         >
-          + Add website
+          + Add A Responsibility
         </button>
       </div>
     )
