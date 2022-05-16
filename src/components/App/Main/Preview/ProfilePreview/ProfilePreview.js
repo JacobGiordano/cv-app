@@ -13,7 +13,7 @@ class ProfilePreview extends Component {
     const {appState} = this.props;
     return (
       <>
-        {appState.profile.profile && <div className="profile-preview">
+        {appState.profile.profile.trim() && <div className="profile-preview">
           <h3>Profile</h3>
           <span>{appState.profile.profile}</span>
         </div>}
