@@ -45,7 +45,7 @@ class AchievementsAndAssociations extends Component {
     })
     return (
       <>
-        <h3>Achievements and Associations</h3>
+        <h3>Achievements and Associations (Optional)</h3>
         {achievementsAssociationArray}
         <button
           onClick={() => handleAddObjToStateArray(stateKey, newObj)}

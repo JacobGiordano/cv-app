@@ -6,6 +6,7 @@ import WorkExperiencePreview from "./WorkExperiencePreview/WorkExperiencePreview
 import ProjectsPreview from "./ProjectsPreview/ProjectsPreview";
 import SkillsPreview from "./SkillsPreview/SkillsPreview";
 import EducationPreview from "./EducationPreview/EducationPreview";
+import AchievementsAndAssociationsPreview from "./AchievementsAndAssociationsPreview/AchievementsAndAssociationsPreview";
 
 class Preview extends Component {
   constructor(props) {
@@ -33,6 +34,12 @@ class Preview extends Component {
       key={i}
       objData={obj}
     ></EducationPreview>)
+    const achievementsAndAssociations = appState.achievements_associations.map((obj, i) => <AchievementsAndAssociationsPreview
+      key={i}
+      objData={obj}
+    ></AchievementsAndAssociationsPreview>)
+    const aAValues = appState.achievements_associations.map(obj => obj.achievement_association.trim() !== "" ? obj : null).join("");
+    console.log(aAValues);
     return (
       <div className="preview">
         <div>Preview</div>
@@ -58,6 +65,10 @@ class Preview extends Component {
           <h3>Education</h3>
           {education}
         </div>
+        {aAValues && <div>
+          <h3>Achievements and Associations</h3>
+          {achievementsAndAssociations}
+        </div>}
       </div>
     );
   }
