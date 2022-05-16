@@ -39,7 +39,6 @@ class Preview extends Component {
       objData={obj}
     ></AchievementsAndAssociationsPreview>)
     const aAValues = appState.achievements_associations.map(obj => obj.achievement_association.trim() !== "" ? obj : null).join("");
-    console.log(aAValues);
     return (
       <div className="preview">
         <div>Preview</div>

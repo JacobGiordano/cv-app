@@ -177,7 +177,7 @@ class Main extends Component {
           ...prevState[stateKey][parentIndex],
           [stateArrayKey]: 
             prevState[stateKey][parentIndex][stateArrayKey].filter((nestedObj, i) => {
-              return i !== indexNum ? nestedObj : console.log(i);
+              return i !== indexNum ? nestedObj : null;
             })
         } : nestedObj;
       })
