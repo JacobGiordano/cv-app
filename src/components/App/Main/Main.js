@@ -57,6 +57,12 @@ class Main extends Component {
             }
           ]
         }
+      ],
+      skills: [
+        {
+          id: uniqid(),
+          skill: ""
+        }
       ]
     }
   }

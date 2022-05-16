@@ -63,9 +63,9 @@ class Inputs extends Component {
         ></ProjectsSection>
         <Skills
           appState={appState}
-          handleChange={handleChange}
-          handleAddObjToObjArray={handleAddObjToObjArray}
-          handleChangeObjInObjArray={handleChangeObjInObjArray}
+          handleAddObjToStateArray={handleAddObjToStateArray}
+          handleRemoveObjFromStateArray={handleRemoveObjFromStateArray}
+          handleUpdateObjInStateArray={handleUpdateObjInStateArray}
         ></Skills>
         <Education
           appState={appState}
