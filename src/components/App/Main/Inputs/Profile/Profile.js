@@ -8,9 +8,6 @@ class Profile extends Component {
 
     }
   }
-  handleChange = (e) => {
-    this.setState({profile_text: e.target.value});
-  }
   render() {
     const stateKey = "profile";
     const {appState, handleChange} = this.props;
