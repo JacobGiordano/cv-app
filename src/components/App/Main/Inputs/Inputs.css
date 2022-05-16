@@ -1,3 +1,10 @@
 .inputs {
+  position: relative;
   flex: 1 1 0;
+}
+
+@media screen and (min-width: 768px) {
+  .inputs {
+    max-width: 50%;
+  }
 }

@@ -1,3 +1,12 @@
 .preview {
   flex: 1 1 0;
 }
+
+@media screen and (min-width: 768px) {
+  .preview {
+    position: fixed;
+    width: 100%;
+    max-width: 40%;
+    right: 0;
+  }
+}
