@@ -19,7 +19,7 @@ class Education extends Component {
     return (
       <div className="card" id={`education_${elementKey}`}>
         <div className="card-title">
-          <h4>education #{elementKey + 1}</h4>
+          <h4>Education #{elementKey + 1}</h4>
           <button 
             id={`remove_card_btn_${elementKey}`}
             className="remove-card-btn"
