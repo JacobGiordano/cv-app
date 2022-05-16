@@ -73,6 +73,12 @@ class Main extends Component {
           start_date: "",
           end_date: ""
         }
+      ],
+      achievements_associations: [
+        {
+          id: uniqid(),
+          achievement_association: ""
+        }
       ]
     }
   }

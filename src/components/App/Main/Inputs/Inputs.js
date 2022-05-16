@@ -78,9 +78,9 @@ class Inputs extends Component {
         ></EducationSection>
         <AchievementsAndAssociations
           appState={appState}
-          handleChange={handleChange}
-          handleAddObjToObjArray={handleAddObjToObjArray}
-          handleChangeObjInObjArray={handleChangeObjInObjArray}
+          handleAddObjToStateArray={handleAddObjToStateArray}
+          handleRemoveObjFromStateArray={handleRemoveObjFromStateArray}
+          handleUpdateObjInStateArray={handleUpdateObjInStateArray}
         ></AchievementsAndAssociations>
       </div>
     )
