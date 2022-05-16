@@ -63,6 +63,16 @@ class Main extends Component {
           id: uniqid(),
           skill: ""
         }
+      ],
+      education: [
+        {
+          id: uniqid(),
+          degree_certificate: "",
+          area_of_study: "",
+          school_institution: "",
+          start_date: "",
+          end_date: ""
+        }
       ]
     }
   }
