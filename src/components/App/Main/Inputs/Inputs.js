@@ -4,7 +4,7 @@ import AchievementsAndAssociations from "./AchievementsAndAssociations/Achieveme
 import Contact from "./Contact/Contact";
 import Education from "./Education/Education";
 import Profile from "./Profile/Profile";
-import Projects from "./Projects/Projects";
+import ProjectsSection from "./ProjectsSection/ProjectsSection";
 import Skills from "./Skills/Skills";
 import WorkExperienceSection from "./WorkExperienceSection/WorkExperienceSection";
 
@@ -52,12 +52,15 @@ class Inputs extends Component {
           handleRemoveObjFromNestedArray={handleRemoveObjFromNestedArray}
           handleChangeArrayObjInStateObjArray={handleChangeArrayObjInStateObjArray}
         ></WorkExperienceSection>
-        <Projects
+        <ProjectsSection
           appState={appState}
-          handleChange={handleChange}
-          handleAddObjToObjArray={handleAddObjToObjArray}
-          handleChangeObjInObjArray={handleChangeObjInObjArray}
-        ></Projects>
+          handleAddObjToStateArray={handleAddObjToStateArray}
+          handleRemoveObjFromStateArray={handleRemoveObjFromStateArray}
+          handleUpdateObjInStateArray={handleUpdateObjInStateArray}
+          handleAddObjToNestedArray={handleAddObjToNestedArray}
+          handleRemoveObjFromNestedArray={handleRemoveObjFromNestedArray}
+          handleChangeArrayObjInStateObjArray={handleChangeArrayObjInStateObjArray}
+        ></ProjectsSection>
         <Skills
           appState={appState}
           handleChange={handleChange}

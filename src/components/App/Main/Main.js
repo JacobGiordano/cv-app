@@ -42,6 +42,21 @@ class Main extends Component {
             }
           ]
         }
+      ],
+      projects: [
+        {
+          id: uniqid(),
+          project: "",
+          role_position: "",
+          start_date: "",
+          end_date: "",
+          responsibilities: [
+            {
+              id: uniqid(),
+              responsibility: ""
+            }
+          ]
+        }
       ]
     }
   }
