@@ -16,7 +16,6 @@ class ProjectPreview extends Component {
         <span>{objData.project}</span>
         <span>{objData.role_position}</span>
         <span>{objData.start_date}</span>
-        <span>{objData.location}</span>
         <span>{objData.end_date}</span>
         { projectResponsibilities }
       </div>
