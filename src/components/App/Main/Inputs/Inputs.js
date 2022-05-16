@@ -23,11 +23,12 @@ class Inputs extends Component {
       handleAddObjToObjArray,
       handleRemoveObjFromObjArray,
       handleChangeObjInObjArray,
-      handleAddObjToNestedArray,
-      handleChangeArrayObjInStateObjArray,
       handleAddObjToStateArray,
       handleRemoveObjFromStateArray,
-      handleUpdateObjInStateArray
+      handleUpdateObjInStateArray,
+      handleAddObjToNestedArray,
+      handleRemoveObjFromNestedArray,
+      handleChangeArrayObjInStateObjArray,
     } = this.props;
     return (
       <div className="inputs">
@@ -44,31 +45,37 @@ class Inputs extends Component {
           handleChange={handleChange}></Profile>
         <WorkExperienceSection
           appState={appState}
-          handleAddObjToNestedArray={handleAddObjToNestedArray}
-          handleChangeArrayObjInStateObjArray={handleChangeArrayObjInStateObjArray}
           handleAddObjToStateArray={handleAddObjToStateArray}
           handleRemoveObjFromStateArray={handleRemoveObjFromStateArray}
-          handleUpdateObjInStateArray={handleUpdateObjInStateArray}></WorkExperienceSection>
+          handleUpdateObjInStateArray={handleUpdateObjInStateArray}
+          handleAddObjToNestedArray={handleAddObjToNestedArray}
+          handleRemoveObjFromNestedArray={handleRemoveObjFromNestedArray}
+          handleChangeArrayObjInStateObjArray={handleChangeArrayObjInStateObjArray}
+        ></WorkExperienceSection>
         <Projects
           appState={appState}
           handleChange={handleChange}
           handleAddObjToObjArray={handleAddObjToObjArray}
-          handleChangeObjInObjArray={handleChangeObjInObjArray}></Projects>
+          handleChangeObjInObjArray={handleChangeObjInObjArray}
+        ></Projects>
         <Skills
           appState={appState}
           handleChange={handleChange}
           handleAddObjToObjArray={handleAddObjToObjArray}
-          handleChangeObjInObjArray={handleChangeObjInObjArray}></Skills>
+          handleChangeObjInObjArray={handleChangeObjInObjArray}
+        ></Skills>
         <Education
           appState={appState}
           handleChange={handleChange}
           handleAddObjToObjArray={handleAddObjToObjArray}
-          handleChangeObjInObjArray={handleChangeObjInObjArray}></Education>
+          handleChangeObjInObjArray={handleChangeObjInObjArray}
+        ></Education>
         <AchievementsAndAssociations
           appState={appState}
           handleChange={handleChange}
           handleAddObjToObjArray={handleAddObjToObjArray}
-          handleChangeObjInObjArray={handleChangeObjInObjArray}></AchievementsAndAssociations>
+          handleChangeObjInObjArray={handleChangeObjInObjArray}
+        ></AchievementsAndAssociations>
       </div>
     )
   }

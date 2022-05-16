@@ -14,11 +14,12 @@ class WorkExperience extends Component {
     const statePropKey = "responsibility";
     const {
       elementKey,
-      handleAddObjToNestedArray,
-      handleChangeArrayObjInStateObjArray,
       workExperienceData,
       handleRemoveObjFromStateArray,
-      handleUpdateObjInStateArray
+      handleUpdateObjInStateArray,
+      handleAddObjToNestedArray,
+      handleChangeArrayObjInStateObjArray,
+      handleRemoveObjFromNestedArray
     } = this.props;
     let responsibilitiesArray = [];
     workExperienceData.responsibilities.map((resp, i) => {
@@ -34,6 +35,10 @@ class WorkExperience extends Component {
             onChange={e => handleChangeArrayObjInStateObjArray(e, stateKey, arrayKey)}
             value={resp.responsibility}
           />
+          <button
+            id={`responsibility_delete_btn_${i}`}
+            onClick={e => handleRemoveObjFromNestedArray(e, stateKey, arrayKey)}
+          >&times;</button>
         </div>
       )
     })

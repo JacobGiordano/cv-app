@@ -129,6 +129,23 @@ class Main extends Component {
       })
     }));
   }
+  handleRemoveObjFromNestedArray = (e, stateKey, stateArrayKey) => {
+    const splitParentId = e.target.closest(".card").id.split("_");
+    const parentIndex = parseInt(splitParentId[splitParentId.length - 1]);
+    const splitId = e.target.id.split("_");
+    const indexNum = parseInt(splitId[splitId.length - 1]);
+    this.setState(prevState => ({
+      [stateKey]: prevState[stateKey].map((nestedObj, i) => {
+        return i === parentIndex ? {
+          ...prevState[stateKey][parentIndex],
+          [stateArrayKey]: 
+            prevState[stateKey][parentIndex][stateArrayKey].filter((nestedObj, i) => {
+              return i !== indexNum ? nestedObj : console.log(i);
+            })
+        } : nestedObj;
+      })
+    }));
+  }
   handleChangeArrayObjInStateObjArray = (e, stateKey, stateArrayKey) => {
     const splitParentId = e.target.closest(".card").id.split("_");
     const parentIndex = parseInt(splitParentId[splitParentId.length - 1]);
@@ -156,12 +173,13 @@ class Main extends Component {
           handleChange={this.handleChange}
           handleAddObjToObjArray={this.handleAddObjToObjArray}
           handleRemoveObjFromObjArray={this.handleRemoveObjFromObjArray}
-          handleAddObjToNestedArray={this.handleAddObjToNestedArray}
-          handleChangeArrayObjInStateObjArray={this.handleChangeArrayObjInStateObjArray}
           handleChangeObjInObjArray={this.handleChangeObjInObjArray}
           handleAddObjToStateArray={this.handleAddObjToStateArray}
           handleRemoveObjFromStateArray={this.handleRemoveObjFromStateArray}
           handleUpdateObjInStateArray={this.handleUpdateObjInStateArray}
+          handleAddObjToNestedArray={this.handleAddObjToNestedArray}
+          handleRemoveObjFromNestedArray={this.handleRemoveObjFromNestedArray}
+          handleChangeArrayObjInStateObjArray={this.handleChangeArrayObjInStateObjArray}
         ></Inputs>
         <Preview
           className="preview"
