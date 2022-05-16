@@ -5,6 +5,7 @@ import ProfilePreview from "./ProfilePreview/ProfilePreview";
 import WorkExperiencePreview from "./WorkExperiencePreview/WorkExperiencePreview";
 import ProjectsPreview from "./ProjectsPreview/ProjectsPreview";
 import SkillsPreview from "./SkillsPreview/SkillsPreview";
+import EducationPreview from "./EducationPreview/EducationPreview";
 
 class Preview extends Component {
   constructor(props) {
@@ -28,6 +29,10 @@ class Preview extends Component {
       key={i}
       objData={obj}
     ></SkillsPreview>)
+    const education = appState.education.map((obj, i) => <EducationPreview
+      key={i}
+      objData={obj}
+    ></EducationPreview>)
     return (
       <div className="preview">
         <div>Preview</div>
@@ -48,6 +53,10 @@ class Preview extends Component {
         <div>
           <h3>Skills</h3>
           {skills}
+        </div>
+        <div>
+          <h3>Education</h3>
+          {education}
         </div>
       </div>
     );
