@@ -36,8 +36,8 @@ class Skills extends Component {
             value={skill.skill}
           />
           <button 
-            id={`remove_card_btn_${i}`}
-            className="remove-card-btn"
+            id={`remove_btn_${i}`}
+            className="remove-btn"
             onClick={e => handleRemoveObjFromStateArray(e, stateKey)}
           >&times;</button>
         </div>
