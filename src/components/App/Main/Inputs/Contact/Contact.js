@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Card from '../Card/Card';
 
 class Contact extends Component {
   constructor(props) {
@@ -43,68 +44,74 @@ class Contact extends Component {
     return (
       <>
         <h3>Contact</h3>
-        <div>
-          <label htmlFor={`first_name`}>First Name</label>
-          <input 
-            type="text"
-            id="first_name"
-            name="first_name"
-            value={appState.contact.first_name}
-            onChange={e => handleChange(e, stateKey)}
-          />
-          <label htmlFor={`last_name`}>Last Name</label>
-          <input 
-            type="text"
-            id="last_name"
-            name="last_name"
-            value={appState.contact.last_name}
-            onChange={e => handleChange(e, stateKey)}
-          />
-        </div>
-        <div>
-          <label htmlFor={`phone`}>Phone Number</label>
-          <input 
-            type="tel"
-            id="phone"
-            name="phone"
-            value={appState.contact.phone}
-            onChange={e => handleChange(e, stateKey)}
-          />
-          <label htmlFor={`email`}>Email</label>
-          <input 
-            type="email"
-            id="email"
-            name="email"
-            value={appState.contact.email}
-            onChange={e => handleChange(e, stateKey)}
-          />
-        </div>
-        <div>
-          <label htmlFor={`city`}>City</label>
-          <input 
-            type="text"
-            id="city"
-            name="city"
-            value={appState.contact.city}
-            onChange={e => handleChange(e, stateKey)}
-          />
-          <label htmlFor={`state_province`}>State / Province</label>
-          <input 
-            type="text"
-            id="state_province"
-            name="state_province"
-            value={appState.contact.state_province}
-            onChange={e => handleChange(e, stateKey)}
-          />
-        </div>
-        <div>
-          {websitesArray}
-        </div>
-        <button
-          onClick={(e) => handleAddObjToObjArray(e, stateKey, arrayKey, statePropKey)}
-        >
-          + Add website
-        </button>
+        <Card 
+          children={
+            <>
+              <div>
+                <label htmlFor={`first_name`}>First Name</label>
+                <input 
+                  type="text"
+                  id="first_name"
+                  name="first_name"
+                  value={appState.contact.first_name}
+                  onChange={e => handleChange(e, stateKey)}
+                />
+                <label htmlFor={`last_name`}>Last Name</label>
+                <input 
+                  type="text"
+                  id="last_name"
+                  name="last_name"
+                  value={appState.contact.last_name}
+                  onChange={e => handleChange(e, stateKey)}
+                />
+              </div>
+              <div>
+                <label htmlFor={`phone`}>Phone Number</label>
+                <input 
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={appState.contact.phone}
+                  onChange={e => handleChange(e, stateKey)}
+                />
+                <label htmlFor={`email`}>Email</label>
+                <input 
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={appState.contact.email}
+                  onChange={e => handleChange(e, stateKey)}
+                />
+              </div>
+              <div>
+                <label htmlFor={`city`}>City</label>
+                <input 
+                  type="text"
+                  id="city"
+                  name="city"
+                  value={appState.contact.city}
+                  onChange={e => handleChange(e, stateKey)}
+                />
+                <label htmlFor={`state_province`}>State / Province</label>
+                <input 
+                  type="text"
+                  id="state_province"
+                  name="state_province"
+                  value={appState.contact.state_province}
+                  onChange={e => handleChange(e, stateKey)}
+                />
+              </div>
+              <div>
+                {websitesArray}
+              </div>
+              <button
+                onClick={(e) => handleAddObjToObjArray(e, stateKey, arrayKey, statePropKey)}
+              >
+                + Add website
+              </button>
+            </>  
+          }
+        ></Card>    
       </>
     )
   }

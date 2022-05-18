@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import uniqid from "uniqid";
+import Card from '../Card/Card';
 
 class AchievementsAndAssociations extends Component {
   constructor(props) {
@@ -46,12 +47,18 @@ class AchievementsAndAssociations extends Component {
     return (
       <>
         <h3>Achievements and Associations (Optional)</h3>
-        {achievementsAssociationArray}
-        <button
-          onClick={() => handleAddObjToStateArray(stateKey, newObj)}
-        >
-          + Add An Achievement or Association
-        </button>
+        <Card
+          children={
+            <>
+              {achievementsAssociationArray}
+              <button
+                onClick={() => handleAddObjToStateArray(stateKey, newObj)}
+              >
+                + Add An Achievement or Association
+              </button>
+            </>
+          }
+        ></Card>
       </>
     )
   }

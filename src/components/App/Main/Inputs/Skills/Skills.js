@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import uniqid from "uniqid";
+import Card from '../Card/Card';
 
 class Skills extends Component {
   constructor(props) {
@@ -46,12 +47,18 @@ class Skills extends Component {
     return (
       <>
         <h3>Skills</h3>
-        {skillsArray}
-        <button
-          onClick={() => handleAddObjToStateArray(stateKey, newObj)}
-        >
-          + Add A Skill
-        </button>
+        <Card
+          children={
+            <>
+              {skillsArray}
+              <button
+                onClick={() => handleAddObjToStateArray(stateKey, newObj)}
+              >
+                + Add A Skill
+              </button>
+            </>
+          }
+        ></Card>
       </>
     )
   }

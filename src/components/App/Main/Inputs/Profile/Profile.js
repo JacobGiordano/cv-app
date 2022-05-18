@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Card from '../Card/Card';
 
 class Profile extends Component {
   constructor(props) {
@@ -14,13 +15,19 @@ class Profile extends Component {
     return (
       <>
         <h3>Profile</h3>
-        <label htmlFor={`profile`}>Profile (optional)</label>
-        <textarea
-          id={`profile`}
-          value={appState.profile.profile}
-          name="profile"
-          onChange={e => handleChange(e, stateKey)}
-        ></textarea>
+        <Card 
+          children={
+            <>
+              <label htmlFor={`profile`}>Profile (optional)</label>
+              <textarea
+                id={`profile`}
+                value={appState.profile.profile}
+                name="profile"
+                onChange={e => handleChange(e, stateKey)}
+              ></textarea>
+            </>
+          }
+        ></Card>
       </>
     );
   }
