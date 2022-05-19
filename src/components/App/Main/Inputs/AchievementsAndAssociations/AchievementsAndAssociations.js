@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import uniqid from "uniqid";
+import AddButton from '../Card/AddButton/AddButton';
 import Card from '../Card/Card';
 
 class AchievementsAndAssociations extends Component {
@@ -51,11 +52,12 @@ class AchievementsAndAssociations extends Component {
           children={
             <>
               {achievementsAssociationArray}
-              <button
-                onClick={() => handleAddObjToStateArray(stateKey, newObj)}
-              >
-                + Add An Achievement or Association
-              </button>
+              <AddButton
+                btnText={"+ Add An Achievement or Association"}
+                stateKey={stateKey}
+                newObj={newObj}
+                onClickFunction={handleAddObjToStateArray}
+              ></AddButton>
             </>
           }
         ></Card>

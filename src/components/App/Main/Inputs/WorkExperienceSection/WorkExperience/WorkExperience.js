@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AddButton from '../../Card/AddButton/AddButton';
 import Card from '../../Card/Card';
 
 class WorkExperience extends Component {
@@ -100,11 +101,13 @@ class WorkExperience extends Component {
             <div>
               {responsibilitiesArray}
             </div>
-            <button
-              onClick={(e) => handleAddObjToNestedArray(e, stateKey, arrayKey, statePropKey)}
-            >
-              + Add A Responsibility
-            </button>
+            <AddButton
+              btnText={"+ Add A Responsibility"}
+              stateKey={stateKey}
+              arrayKey={arrayKey}
+              statePropKey={statePropKey}
+              onClickFunction={handleAddObjToNestedArray}
+            ></AddButton>
           </div>
         }
       ></Card>
