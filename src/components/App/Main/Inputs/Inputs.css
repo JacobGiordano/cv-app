@@ -1,6 +1,8 @@
 .inputs {
+  display: block;
   position: relative;
   flex: 1 1 0;
+  padding: 1rem;
 }
 
 @media screen and (min-width: 768px) {
