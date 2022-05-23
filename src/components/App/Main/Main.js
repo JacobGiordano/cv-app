@@ -105,7 +105,7 @@ class Main extends Component {
     }));
   }
   handleRemoveObjFromObjArray = (e, stateKey, stateArrayKey) => {
-    const splitId = e.target.id.split("_");
+    const splitId = e.target.closest("button").id.split("_");
     const indexNum = parseInt(splitId[splitId.length - 1]);
     this.setState(prevState => ({
       [stateKey]: {
@@ -132,7 +132,7 @@ class Main extends Component {
     }));
   }
   handleRemoveObjFromStateArray = (e, stateKey) => {
-    const splitId = e.target.id.split("_");
+    const splitId = e.target.closest("button").id.split("_");
     const indexNum = parseInt(splitId[splitId.length - 1]);
     this.setState(prevState => ({
       [stateKey]: prevState[stateKey].filter((obj, i) => i !== indexNum ? obj : null)
