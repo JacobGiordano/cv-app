@@ -29,30 +29,31 @@ class AchievementsAndAssociations extends Component {
     appState.achievements_associations.map((aa, i) => {
       let labelText = `Achievement or Association #${i + 1}`;
       return achievementsAssociationArray.push(
-        <div key={i}>
-          <div className={styles.cardRow}>
-            <div className={styles.inputWrapper}>
-              <label
-                htmlFor={`achievement_association_${i}`}
-              >{labelText}</label>
-              <div className={styles.dynamicRowInnerWrapper}>
-                <input
-                  type="text"
-                  id={`achievement_association_${i}`}
-                  onChange={e => handleUpdateObjInStateArray(e, stateKey)}
-                  value={aa.achievement_association}
-                />
-                <button 
-                  id={`remove_btn_${i}`}
-                  title="Delete"
-                  className="remove-btn"
-                  onClick={e => handleRemoveObjFromStateArray(e, stateKey)}
-                >
-                  <Trash2
-                    size={16}
-                  ></Trash2>
-                </button>
-              </div>
+        <div
+          key={i}
+          className={styles.cardRow}
+        >
+          <div className={styles.inputWrapper}>
+            <label
+              htmlFor={`achievement_association_${i}`}
+            >{labelText}</label>
+            <div className={styles.inputWrapperInnerWrapper}>
+              <input
+                type="text"
+                id={`achievement_association_${i}`}
+                onChange={e => handleUpdateObjInStateArray(e, stateKey)}
+                value={aa.achievement_association}
+              />
+              <button 
+                id={`remove_btn_${i}`}
+                title="Delete"
+                className="remove-btn"
+                onClick={e => handleRemoveObjFromStateArray(e, stateKey)}
+              >
+                <Trash2
+                  size={16}
+                ></Trash2>
+              </button>
             </div>
           </div>
         </div>

@@ -27,29 +27,31 @@ class Contact extends Component {
     appState.contact.websites.map((website, i) => {
       let labelText = `Website #${i + 1}`;
       return websitesArray.push(
-        <div
+        <div 
           key={i}
-          className={styles.dynamicRow}
-          >
-          <label
-            htmlFor={`site_${i}`}
-          >{labelText}</label>
-          <div className={styles.dynamicRowInnerWrapper}>
-            <input
-              type="text"
-              id={`site_${i}`}
-              onChange={e => handleChangeObjInObjArray(e, stateKey, arrayKey, statePropKey)}
-              value={website.site}
-            />
-            <button
-              id={`site_delete_btn_${i}`}
-              title="Delete"
-              onClick={e => handleRemoveObjFromObjArray(e, stateKey, arrayKey)}
-            >
-              <Trash2
-                size={16}
-              ></Trash2>
-            </button>
+          className={styles.cardRow}
+        >
+          <div className={styles.inputWrapper}>
+            <label
+              htmlFor={`site_${i}`}
+            >{labelText}</label>
+            <div className={styles.inputWrapperInnerWrapper}>
+              <input
+                type="text"
+                id={`site_${i}`}
+                onChange={e => handleChangeObjInObjArray(e, stateKey, arrayKey, statePropKey)}
+                value={website.site}
+              />
+              <button
+                id={`site_delete_btn_${i}`}
+                title="Delete"
+                onClick={e => handleRemoveObjFromObjArray(e, stateKey, arrayKey)}
+              >
+                <Trash2
+                  size={16}
+                ></Trash2>
+              </button>
+            </div>
           </div>
         </div>
       )
@@ -126,9 +128,7 @@ class Contact extends Component {
                   />
                 </div>
               </div>
-              <div>
-                {websitesArray}
-              </div>
+              {websitesArray}
               <div className={`${styles.cardRow} ${styles.addBtnWrapper}`}>
                 <AddButton
                   btnText={"+ Add website"}

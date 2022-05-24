@@ -29,30 +29,31 @@ class Skills extends Component {
     appState.skills.map((skill, i) => {
       let labelText = `Skill #${i + 1}`;
       return skillsArray.push(
-        <div key={i}>
-          <div className={styles.cardRow}>
-            <div className={styles.inputWrapper}>
-              <label
-                htmlFor={`skill_${i}`}
-              >{labelText}</label>
-              <div className={styles.dynamicRowInnerWrapper}>
-                <input
-                  type="text"
-                  id={`skill_${i}`}
-                  onChange={e => handleUpdateObjInStateArray(e, stateKey)}
-                  value={skill.skill}
-                />
-                <button 
-                  id={`remove_btn_${i}`}
-                  className="remove-btn"
-                  title="Delete"
-                  onClick={e => handleRemoveObjFromStateArray(e, stateKey)}
-                >
-                  <Trash2
-                    size={16}
-                  ></Trash2>
-                </button>
-              </div>
+        <div 
+          key={i}
+          className={styles.cardRow}
+        >
+          <div className={styles.inputWrapper}>
+            <label
+              htmlFor={`skill_${i}`}
+            >{labelText}</label>
+            <div className={styles.inputWrapperInnerWrapper}>
+              <input
+                type="text"
+                id={`skill_${i}`}
+                onChange={e => handleUpdateObjInStateArray(e, stateKey)}
+                value={skill.skill}
+              />
+              <button 
+                id={`remove_btn_${i}`}
+                className="remove-btn"
+                title="Delete"
+                onClick={e => handleRemoveObjFromStateArray(e, stateKey)}
+              >
+                <Trash2
+                  size={16}
+                ></Trash2>
+              </button>
             </div>
           </div>
         </div>
