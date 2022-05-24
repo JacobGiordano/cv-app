@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import AddButton from '../Card/AddButton/AddButton';
 import Card from '../Card/Card';
+import styles from "../Card/Card.module.css";
+import { Trash2 } from 'react-feather';
 
 class Contact extends Component {
   constructor(props) {
@@ -25,20 +27,30 @@ class Contact extends Component {
     appState.contact.websites.map((website, i) => {
       let labelText = `Website #${i + 1}`;
       return websitesArray.push(
-        <div key={i}>
+        <div
+          key={i}
+          className={styles.dynamicRow}
+          >
           <label
             htmlFor={`site_${i}`}
           >{labelText}</label>
-          <input
-            type="text"
-            id={`site_${i}`}
-            onChange={e => handleChangeObjInObjArray(e, stateKey, arrayKey, statePropKey)}
-            value={website.site}
-          />
-          <button
-            id={`site_delete_btn_${i}`}
-            onClick={e => handleRemoveObjFromObjArray(e, stateKey, arrayKey)}
-          >&times;</button>
+          <div className={styles.dynamicRowInnerWrapper}>
+            <input
+              type="text"
+              id={`site_${i}`}
+              onChange={e => handleChangeObjInObjArray(e, stateKey, arrayKey, statePropKey)}
+              value={website.site}
+            />
+            <button
+              id={`site_delete_btn_${i}`}
+              title="Delete"
+              onClick={e => handleRemoveObjFromObjArray(e, stateKey, arrayKey)}
+            >
+              <Trash2
+                size={16}
+              ></Trash2>
+            </button>
+          </div>
         </div>
       )
     })
@@ -48,8 +60,8 @@ class Contact extends Component {
         <Card 
           children={
             <>
-              <div className="card-row">
-                <div className="input-wrapper">
+              <div className={styles.cardRow}>
+                <div className={styles.inputWrapper}>
                   <label htmlFor={`first_name`}>First Name</label>
                   <input 
                     type="text"
@@ -59,7 +71,7 @@ class Contact extends Component {
                     onChange={e => handleChange(e, stateKey)}
                   />
                 </div>
-                <div className="input-wrapper">
+                <div className={styles.inputWrapper}>
                   <label htmlFor={`last_name`}>Last Name</label>
                   <input 
                     type="text"
@@ -70,8 +82,8 @@ class Contact extends Component {
                   />
                 </div>
               </div>
-              <div className="card-row">
-                <div className="input-wrapper">                
+              <div className={styles.cardRow}>
+                <div className={styles.inputWrapper}>                
                   <label htmlFor={`phone`}>Phone Number</label>
                   <input 
                     type="tel"
@@ -81,7 +93,7 @@ class Contact extends Component {
                     onChange={e => handleChange(e, stateKey)}
                   />
                 </div>
-                <div className="input-wrapper">                  
+                <div className={styles.inputWrapper}>                  
                   <label htmlFor={`email`}>Email</label>
                   <input 
                     type="email"
@@ -92,8 +104,8 @@ class Contact extends Component {
                   />
                 </div>
               </div>
-              <div className="card-row">
-                <div className="input-wrapper">                  
+              <div className={styles.cardRow}>
+                <div className={styles.inputWrapper}>                  
                   <label htmlFor={`city`}>City</label>
                   <input 
                     type="text"
@@ -103,7 +115,7 @@ class Contact extends Component {
                     onChange={e => handleChange(e, stateKey)}
                   />
                 </div>
-                <div className="input-wrapper">
+                <div className={styles.inputWrapper}>
                   <label htmlFor={`state_province`}>State / Province</label>
                   <input 
                     type="text"
@@ -117,13 +129,15 @@ class Contact extends Component {
               <div>
                 {websitesArray}
               </div>
-              <AddButton
-                btnText={"+ Add website"}
-                stateKey={stateKey}
-                arrayKey={arrayKey}
-                statePropKey={statePropKey}
-                onClickFunction={handleAddObjToObjArray}
-              ></AddButton>
+              <div className={`${styles.cardRow} ${styles.addBtnWrapper}`}>
+                <AddButton
+                  btnText={"+ Add website"}
+                  stateKey={stateKey}
+                  arrayKey={arrayKey}
+                  statePropKey={statePropKey}
+                  onClickFunction={handleAddObjToObjArray}
+                ></AddButton>
+              </div>
             </>  
           }
         ></Card>    
