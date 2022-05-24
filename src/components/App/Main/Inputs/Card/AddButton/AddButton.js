@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./AddButton.css";
+import styles from "./AddButton.module.css";
 
 class AddButton extends Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class AddButton extends Component {
     return (
       <>
         <button
-          className="card-add-btn"
+          className={styles.cardAddBtn}
           onClick={handleOnClick}
         >
           {btnText}

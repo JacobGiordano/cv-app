@@ -1,0 +1,17 @@
+.cardAddBtn {
+  display: inline-block;
+  background: #ffffff;
+  border: 1px solid transparent;
+  border-radius: .5rem;
+  color: #005f75;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  text-decoration: underline;
+  transition: all ease-in-out .15s;
+}
+
+.cardAddBtn:hover, .cardAddBtn:focus {
+  border-color: #005f75;
+  -webkit-text-decoration-color: #ffffff;
+          text-decoration-color: #ffffff;
+}
