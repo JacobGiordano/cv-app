@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import uniqid from "uniqid";
 import AddButton from '../Card/AddButton/AddButton';
 import Card from '../Card/Card';
+import styles from "../Card/Card.module.css";
+import { Trash2 } from 'react-feather';
 
 class Skills extends Component {
   constructor(props) {
@@ -28,20 +30,31 @@ class Skills extends Component {
       let labelText = `Skill #${i + 1}`;
       return skillsArray.push(
         <div key={i}>
-          <label
-            htmlFor={`skill_${i}`}
-          >{labelText}</label>
-          <input
-            type="text"
-            id={`skill_${i}`}
-            onChange={e => handleUpdateObjInStateArray(e, stateKey)}
-            value={skill.skill}
-          />
-          <button 
-            id={`remove_btn_${i}`}
-            className="remove-btn"
-            onClick={e => handleRemoveObjFromStateArray(e, stateKey)}
-          >&times;</button>
+          <div className={styles.cardRow}>
+            <div className={styles.inputWrapper}>
+              <label
+                htmlFor={`skill_${i}`}
+              >{labelText}</label>
+              <div className={styles.dynamicRowInnerWrapper}>
+                <input
+                  type="text"
+                  id={`skill_${i}`}
+                  onChange={e => handleUpdateObjInStateArray(e, stateKey)}
+                  value={skill.skill}
+                />
+                <button 
+                  id={`remove_btn_${i}`}
+                  className="remove-btn"
+                  title="Delete"
+                  onClick={e => handleRemoveObjFromStateArray(e, stateKey)}
+                >
+                  <Trash2
+                    size={16}
+                  ></Trash2>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       )
     })
@@ -52,12 +65,14 @@ class Skills extends Component {
           children={
             <>
               {skillsArray}
-              <AddButton
-                btnText={"+ Add A Skill"}
-                stateKey={stateKey}
-                newObj={newObj}
-                onClickFunction={handleAddObjToStateArray}
-              ></AddButton>
+              <div className={`${styles.cardRow} ${styles.addBtnWrapper}`}>  
+                <AddButton
+                  btnText={"+ Add A Skill"}
+                  stateKey={stateKey}
+                  newObj={newObj}
+                  onClickFunction={handleAddObjToStateArray}
+                ></AddButton>
+              </div>
             </>
           }
         ></Card>
