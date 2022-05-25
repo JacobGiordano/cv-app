@@ -167,9 +167,11 @@ class Main extends Component {
     }));
   }
   handleRemoveObjFromNestedArray = (e, stateKey, stateArrayKey) => {
-    const splitParentId = e.target.closest(".card").id.split("_");
+    const clickedBtn = e.target.closest("button")
+    const splitParentId = clickedBtn.closest(".card").id.split("_");
+    console.log(e.target)
     const parentIndex = parseInt(splitParentId[splitParentId.length - 1]);
-    const splitId = e.target.id.split("_");
+    const splitId = clickedBtn.id.split("_");
     const indexNum = parseInt(splitId[splitId.length - 1]);
     this.setState(prevState => ({
       [stateKey]: prevState[stateKey].map((nestedObj, i) => {
