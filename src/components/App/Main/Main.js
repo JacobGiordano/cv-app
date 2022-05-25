@@ -169,7 +169,6 @@ class Main extends Component {
   handleRemoveObjFromNestedArray = (e, stateKey, stateArrayKey) => {
     const clickedBtn = e.target.closest("button")
     const splitParentId = clickedBtn.closest(".card").id.split("_");
-    console.log(e.target)
     const parentIndex = parseInt(splitParentId[splitParentId.length - 1]);
     const splitId = clickedBtn.id.split("_");
     const indexNum = parseInt(splitId[splitId.length - 1]);
