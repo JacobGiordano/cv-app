@@ -8,9 +8,11 @@ class Card extends Component {
     this.state = {}
   }
   render() {
-    const {children} = this.props;
+    const {children, id} = this.props;
     return (
-      <div className={styles.card}>
+      <div
+        className={`card ${styles.card}`}
+        id={id}>
         {children}
       </div>
     )
