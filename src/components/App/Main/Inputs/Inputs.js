@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Inputs.css"
+import styles from "../Inputs/Inputs.module.css";
 import AchievementsAndAssociations from "./AchievementsAndAssociations/AchievementsAndAssociations";
 import Contact from "./Contact/Contact";
 import Profile from "./Profile/Profile";
@@ -31,7 +31,7 @@ class Inputs extends Component {
       handleChangeArrayObjInStateObjArray,
     } = this.props;
     return (
-      <div className="inputs">
+      <div className={styles.inputs}>
         <div>Inputs</div>
         <Contact
           appState={appState}
