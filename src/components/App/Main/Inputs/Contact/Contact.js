@@ -44,6 +44,7 @@ class Contact extends Component {
               />
               <button
                 id={`site_delete_btn_${i}`}
+                className={styles.deleteBtn}
                 title="Delete"
                 onClick={e => handleRemoveObjFromObjArray(e, stateKey, arrayKey)}
               >
