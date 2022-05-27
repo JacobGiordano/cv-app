@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import uniqid from "uniqid";
+import AddCardBtn from '../AddCardBtn/AddCardBtn';
 import Project from './Project/Project';
 
 class ProjectsSection extends Component {
@@ -51,11 +52,12 @@ class ProjectsSection extends Component {
       <>
         <h3>Projects</h3>
         {projectsArray}
-        <button
-          onClick={() => handleAddObjToStateArray(stateKey, newObj)}
-        >
-          + Add A Project
-        </button>
+        <AddCardBtn
+          btnText="+ Add A Project"
+          handleAddObjToStateArray={handleAddObjToStateArray}
+          stateKey={stateKey}
+          newObj={newObj}
+        ></AddCardBtn>
       </>
     )
   }
