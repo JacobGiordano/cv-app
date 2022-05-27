@@ -1,12 +1,12 @@
 .cardAddBtn {
   display: inline-block;
   background: #ffffff;
-  border: 1px solid transparent;
-  border-radius: .5rem;
+  border: none;
+  border-bottom: 1px solid transparent;
   color: #005f75;
   cursor: pointer;
-  padding: 0.25rem 0.5rem;
   transition: all ease-in-out .15s;
+  padding: 0 0 0.125rem 0;
 }
 
 .cardAddBtn:hover, .cardAddBtn:focus {
