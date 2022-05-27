@@ -1,0 +1,26 @@
+:root {
+  --white: #ffffff;
+  --blue: #005f75;
+}
+.addCardBtnWrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.addCardBtn {
+  display: flex;
+  background: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: .5rem;
+  color: var(--white);
+  justify-content: center;
+  align-items: center;
+  padding: .5rem .75rem;
+  cursor: pointer;
+  transition: all ease-in-out .2s;
+}
+
+.addCardBtn:hover, .addCardBtn:focus {
+  background: var(--white);
+  color: var(--blue);
+}
