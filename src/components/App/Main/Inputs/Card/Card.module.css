@@ -26,6 +26,7 @@
 }
 
 .cardTitle h4 {
+  color: var(--purple);
   margin: 0;
   font-weight: 400;
 }
