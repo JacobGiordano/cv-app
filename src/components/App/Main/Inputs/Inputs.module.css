@@ -1,0 +1,34 @@
+:root {
+  --white: #ffffff;
+  --purple: #8f1b74;
+  --blue: #005f75;
+  --light-gray: #eeeeee;
+  --med-gray: #949494;
+}
+
+.inputs {
+  display: block;
+  position: relative;
+  flex: 1 1 0;
+  padding: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .inputs {
+    max-width: 50%;
+  }
+}
+
+.inputs h3 {
+  border-top: 2px solid var(--purple);
+  color: var(--blue);
+  font-weight: 500;
+  margin-top: 3rem;
+  padding-top: 2rem;
+}
+
+.inputs h3:first-of-type {
+  border-top-color: transparent;
+  margin-top: 1rem;
+  padding-top: 0;
+}

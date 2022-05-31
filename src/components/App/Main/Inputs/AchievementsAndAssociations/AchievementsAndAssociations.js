@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import uniqid from "uniqid";
+import AddButton from '../Card/AddButton/AddButton';
+import Card from '../Card/Card';
+import styles from "../Card/Card.module.css";
+import { Trash2 } from 'react-feather';
 
 class AchievementsAndAssociations extends Component {
   constructor(props) {
@@ -25,33 +29,54 @@ class AchievementsAndAssociations extends Component {
     appState.achievements_associations.map((aa, i) => {
       let labelText = `Achievement or Association #${i + 1}`;
       return achievementsAssociationArray.push(
-        <div key={i}>
-          <label
-            htmlFor={`achievement_association_${i}`}
-          >{labelText}</label>
-          <input
-            type="text"
-            id={`achievement_association_${i}`}
-            onChange={e => handleUpdateObjInStateArray(e, stateKey)}
-            value={aa.achievement_association}
-          />
-          <button 
-            id={`remove_card_btn_${i}`}
-            className="remove-card-btn"
-            onClick={e => handleRemoveObjFromStateArray(e, stateKey)}
-          >&times;</button>
+        <div
+          key={i}
+          className={styles.cardRow}
+        >
+          <div className={styles.inputWrapper}>
+            <label
+              htmlFor={`achievement_association_${i}`}
+            >{labelText}</label>
+            <div className={styles.inputWrapperInnerWrapper}>
+              <input
+                type="text"
+                id={`achievement_association_${i}`}
+                onChange={e => handleUpdateObjInStateArray(e, stateKey)}
+                value={aa.achievement_association}
+              />
+              <button 
+                id={`remove_btn_${i}`}
+                title="Delete"
+                className="remove-btn"
+                onClick={e => handleRemoveObjFromStateArray(e, stateKey)}
+              >
+                <Trash2
+                  size={16}
+                ></Trash2>
+              </button>
+            </div>
+          </div>
         </div>
       )
     })
     return (
       <>
         <h3>Achievements and Associations (Optional)</h3>
-        {achievementsAssociationArray}
-        <button
-          onClick={() => handleAddObjToStateArray(stateKey, newObj)}
-        >
-          + Add An Achievement or Association
-        </button>
+        <Card
+          children={
+            <>
+              {achievementsAssociationArray}
+              <div className={`${styles.cardRow} ${styles.addBtnWrapper}`}>
+                <AddButton
+                  btnText={"+ Add An Achievement or Association"}
+                  stateKey={stateKey}
+                  newObj={newObj}
+                  onClickFunction={handleAddObjToStateArray}
+                ></AddButton>
+              </div>
+            </>
+          }
+        ></Card>
       </>
     )
   }

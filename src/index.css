@@ -1,0 +1,12 @@
+@import-normalize;
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@100;200;300;400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #F3F3F3;
+  font-family: "Sarabun", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}

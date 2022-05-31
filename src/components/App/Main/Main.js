@@ -105,7 +105,7 @@ class Main extends Component {
     }));
   }
   handleRemoveObjFromObjArray = (e, stateKey, stateArrayKey) => {
-    const splitId = e.target.id.split("_");
+    const splitId = e.target.closest("button").id.split("_");
     const indexNum = parseInt(splitId[splitId.length - 1]);
     this.setState(prevState => ({
       [stateKey]: {
@@ -132,7 +132,7 @@ class Main extends Component {
     }));
   }
   handleRemoveObjFromStateArray = (e, stateKey) => {
-    const splitId = e.target.id.split("_");
+    const splitId = e.target.closest("button").id.split("_");
     const indexNum = parseInt(splitId[splitId.length - 1]);
     this.setState(prevState => ({
       [stateKey]: prevState[stateKey].filter((obj, i) => i !== indexNum ? obj : null)
@@ -167,9 +167,10 @@ class Main extends Component {
     }));
   }
   handleRemoveObjFromNestedArray = (e, stateKey, stateArrayKey) => {
-    const splitParentId = e.target.closest(".card").id.split("_");
+    const clickedBtn = e.target.closest("button")
+    const splitParentId = clickedBtn.closest(".card").id.split("_");
     const parentIndex = parseInt(splitParentId[splitParentId.length - 1]);
-    const splitId = e.target.id.split("_");
+    const splitId = clickedBtn.id.split("_");
     const indexNum = parseInt(splitId[splitId.length - 1]);
     this.setState(prevState => ({
       [stateKey]: prevState[stateKey].map((nestedObj, i) => {
